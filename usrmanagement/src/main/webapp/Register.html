@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+
+
+
+
+
+<title>Registrataion form</title>
+<style type="text/css">
+#frm {
+	width: 500px;
+	margin: auto;
+	margin-top: 100px;
+}
+</style>
+
+</head>
+
+<body calss="container-fluid ">
+
+	<form action="./register" method="post" class="form card" id="frm">
+		<h1 class="bg-danger card-header text-white">OJAS REGISTRATION</h1>
+
+		<table class="table table-hover card-body">
+			<tr>
+				<td>Frist Name:</td>
+				<td><input type="text" name="fname" required></td>
+			</tr>
+			<tr>
+				<td>Last Name:</td>
+				<td><input type="text" name="lname" required></td>
+			</tr>
+
+			<tr>
+				<td>Email :</td>
+				<td><input type="text" name="email" required></td>
+			</tr>
+			<tr>
+				<td>New password:</td>
+				<td><input type="password" name="npass" required></td>
+			</tr>
+			<tr>
+				<td>Confrom Password:</td>
+				<td><input type="password" name="cpass" required></td>
+			</tr>
+			<tr>
+				<td>Phone Number:</td>
+				<td><input type="text" name="pnumber" required></td>
+			</tr>
+			<tr>
+				<td>DateOfBrith:</td>
+				<td><input type="date" name="dob" required></td>
+			</tr>
+			<tr>
+				<td>City:</td>
+				<td><select name="city">
+						<option value="pune">pune</option>
+						<option value="mubai">mubai</option>
+						<option value="delhi">delhi</option>
+						<option value="hyderabd">hyderabd</option>
+						<option value="vijayada">vijayada</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td><input type="radio" name="gneder" value="male">male
+					&nbsp; <input type="radio" name="gneder" value="female">female</td>
+			</tr>
+			<tr class="card-footer ">
+				<td><button type="submit" class="btn btn-primary">Register</button></td>
+				<td><button type="reset" class="btn btn-primary">Cancle</button></td>
+			</tr>
+		</table>
+		<button class="btn btn-outline-success d-block">
+			<a href='./showdata'>show user</a>
+		</button>
+	</form>
+</body>
+</html>
