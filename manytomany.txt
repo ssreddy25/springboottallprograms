@@ -1,0 +1,311 @@
+
+Many to Many Bidirectional Relationship in Hibernate 4.X with Example
+
+
+Hibernate
+
+ 
+
+Many-to-Many association is refer to @ManyToMany annotation in Hibernate 4.x, In this section we will discuss the relationship between User and Group, each User belongs to multiple Group’s similarly each Group belongs to multiple User’s, such relationship is called many-to-many association. In this relationship an intermediate table will be created that hold the reference of both tables. As you can see at below picture a “user_groups” table is created that is holding a reference of both tables i.e user_id act as a foreign key that refers to User Table and group_id acts also as a foreign key that refers to Groups Tables.
+
+many-to-many
+
+
+
+Pom.xml
+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<groupId>com.itexperts</groupId>
+<artifactId>HibernateTest</artifactId>
+<packaging>jar</packaging>
+<version>1.0.0</version>
+<name>HibernateTest</name>
+<url>http://maven.apache.org</url>
+
+<dependencies>
+<dependency>
+<groupId>org.hibernate</groupId>
+<artifactId>hibernate-core</artifactId>
+<version>4.0.1.Final</version>
+</dependency>
+
+<dependency>
+<groupId>org.hibernate.common</groupId>
+<artifactId>hibernate-commons-annotations</artifactId>
+<version>4.0.1.Final</version>
+<classifier>tests</classifier>
+</dependency>
+
+<dependency>
+<groupId>mysql</groupId>
+<artifactId>mysql-connector-java</artifactId>
+<version>5.1.10</version>
+</dependency>
+
+</dependencies>
+</project>
+
+hibernate.cfg.xml : In given hibernate configuration file, we set “hbm2ddl.auto" is "Create" means every execution of Program, all scheme will be drop and recreated again.
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+
+<property name="connection.url">jdbc:mysql://localhost:3306/mydb</property>
+<property name="connection.username">root</property>
+<property name="connection.password">root</property>
+<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+<property name="show_sql">true</property>
+
+<property name="format_sql">true</property>
+<property name="hbm2ddl.auto">create</property>
+
+<!-- JDBC connection pool (use the built-in) -->
+<property name="connection.pool_size">1</property>
+<property name="current_session_context_class">thread</property>
+
+<mapping class="com.itexperts.hibernate.model.User" />
+<mapping class="com.itexperts.hibernate.model.Group" />
+
+</session-factory>
+</hibernate-configuration>
+
+User.java
+
+
+package com.itexperts.hibernate.model;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "users")
+public class User {
+
+	@Id
+	@GeneratedValue
+	private long id;
+
+	@Column(name = "USER_NAME")
+	private String username;
+	@Column(name = "EMAIL")
+	private String email;
+	@Column(name = "PHONE")
+	private String phone;
+
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinTable(name = "user_groups", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
+	private Set userGroups = new HashSet();
+
+	public User() {
+	}
+
+	public User(String username, String email, String phone) {
+		super();
+		this.username = username;
+		this.email = email;
+		this.phone = phone;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public Set getUserGroups() {
+		return userGroups;
+	}
+
+	public void setUserGroups(Set userGroups) {
+		this.userGroups = userGroups;
+	}
+
+}
+
+
+Group.java
+
+
+package com.example.hibernate.model;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "GROUPS")
+public class Group {
+
+	@Id
+	@GeneratedValue
+	@Column(name = "GROUP_ID")
+	private long id;
+
+	@Column(name = "name")
+	private String name;
+
+	@ManyToMany(cascade = { CascadeType.ALL},fetch=FetchType.LAZY)
+	@JoinTable(name = "USERS_GROUPS", joinColumns = { @JoinColumn(name = "GROUP_ID") }, inverseJoinColumns = { @JoinColumn(name = "USER_ID") })
+	private Set users = new HashSet();
+
+	public Group(){}
+	public Group(String name) {
+		this.name = name;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Set getUsers() {
+		return users;
+	}
+
+	public void setUsers(Set users) {
+		this.users = users;
+	}
+
+	public void addUser(User user) {
+		this.users.add(user);
+	}
+
+}
+
+
+Main Class:-
+
+
+package com.itexperts.relationship.example;
+
+import org.hibernate.FetchMode;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
+
+import com.itexperts.hibernate.model.Group;
+import com.itexperts.hibernate.model.User;
+import com.itexperts.utils.HibernateUtils;
+
+public class MTMRelationalTest {
+
+	public static void main(String args[]) {
+
+		Group group1 = new Group("IT", "Admin");
+		Group group2 = new Group("Transport", "Admin");
+		Group group3 = new Group("Transport", "Super");
+		Group group4 = new Group("Transport", "User");
+		Group group5 = new Group("IT", "User");
+
+		User user1 = new User("user1", "user1@gmail.com", "123-234324-234");
+		user1.getUserGroups().add(group5);
+		user1.getUserGroups().add(group1);
+		user1.getUserGroups().add(group2);
+		user1.getUserGroups().add(group4);
+
+		User user2 = new User("user2", "user2@gmail.com", "123-234324-234");
+		user2.getUserGroups().add(group5);
+		user2.getUserGroups().add(group1);
+
+		User user3 = new User("user3", "user3@gmail.com", "123-234324-234");
+		user3.getUserGroups().add(group5);
+		user3.getUserGroups().add(group1);
+		user3.getUserGroups().add(group3);
+		user3.getUserGroups().add(group4);
+
+		User user4 = new User("user4", "user4@gmail.com", "123-234324-234");
+		user4.getUserGroups().add(group3);
+		user4.getUserGroups().add(group2);
+		user4.getUserGroups().add(group4);
+
+		User user5 = new User("user5", "user5@gmail.com", "123-234324-234");
+		user5.getUserGroups().add(group5);
+		user5.getUserGroups().add(group1);
+
+		User user6 = new User("user6", "user6@gmail.com", "123-234324-234");
+		user6.getUserGroups().add(group1);
+		user6.getUserGroups().add(group4);
+
+		Session session = HibernateUtils.getInstance().openSession();
+		Transaction tx = session.beginTransaction();
+
+	    session.save(user6);
+		session.save(user5);
+		session.save(user4);
+		session.save(user3);
+		session.save(user2);
+		session.save(user1);
+
+		
+		tx.commit();
+		session.close();
+	}
+}

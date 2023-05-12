@@ -1,0 +1,103 @@
+aws
+-----
+5/11/2023
+agenda
+--
+history of aws?
+what is iam?
+iam features?
+key terminology for iam?
+hands-on?
+
+iam(identity access management)
+------------------------
+iam is a web service that helps you securely
+ control acess to awas ressources  for your users.
+1.iam allows you to mange users and theire level of access to the aws consoe
+2.it is important to understand iam and how it works
+3.both for the exam and for administrating a 
+company's aws account in real life.
+
+features:
+----------
+1.centrailzed control of your aws account
+2.shred access to your aws account
+3.granular permissions
+4.multifactor authentication
+5.allows you to set up your own password rotation policy
+6.integrates with many different aws services
+
+key terminology for iam
+-------------
+users :
+using iam ,you can create and mange aws users and use permissions toallow and densy
+their access to aws resources .end users such as 
+pepople ,employess of an organization etc
+
+groups:
+a collectio of users.each user in the group will
+inherit the permissions of the group.
+
+policies:
+policies are made up of documents called policy documents
+.these documents are in a format called json and they g
+they give permissions as to what a user/group/rle is able to do.
+
+Roles:
+an iam role is an iam entity that defines a set
+of perimissions for making aws service requests.
+Iam roles are not associated with a specific user
+or group.
+instead a trusted entities assume roles,such as iam 
+users,application ,or aws services such as ec2 ,you create
+roles and then assign them to aws resources.
+
+
+     policy         user(u1,u2)   policy(set of permissions)
+
+
+ec2services ------role----- s3service
+
+role:it creates trust relationship between two or
+ more services
+
+important points:
+--------
+iam is universal .it does not apply to region at this time
+1.the "root account" is simply the account created 
+when frist setup your aws account.it has complete admin access.
+
+2.new users have no permissions when frist created.
+
+3.for all users(besides the root user),
+permissions must be given that grant access to aws services
+
+4.new users are assignded access key id 
+$ secreat access keys when first created.
+
+5.these are not the same as a password.you cannot
+use the access key id$ secreat access key to login
+in the console.you can use this to access aws via
+the apis and command line ,however.
+
+6.you only get to view these once.if you lose them
+,you have to regenerate them.so save them in a secure location.
+
+7.always setup multifactor authentication on your foot account
+8.you can create and customize your own password
+rotation polices.
+
+
+aws free tier account link
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+java 8 feaures
+-----------------
+imperative vs dec;aratove programming 
+
+an impperative approach (how) i see the lamp over there ar the counter we will take 
+ over the , will bring it over and will buy it.
+
+a declarative approach what :i want to buy that lamp
+//declarative style calculatuin sum
+int sum = intStream.of(1,2,3,4,5).sum();
+system.out.println("sum ="+sum)
+
+ontherway
+-------
+int sum =IntStream.rangeClosed(1,5).sum();
+
+system.out.println(sum).
+
+//declarative style ,find minimum
+
+List<Integer> number =Arrays.asList(1,2,3,4,4,5,7)
+number.stream().min(Integer::compareTo);
+
+
+what is lambda expression ?
+
+lambda expressio is an anonymous function.
+it's a function without a name and does not belong any clas.
+
+lamda vs jvam method
+--------
+a mehtod in java has these mian parts:
+.name
+.parmeter list
+.body 
+.return type
+
+A lamda expression in java has these main partes:
+
+----------
+No name - as this is anonymous funtio there is no name neededd 
+.parameter list
+.body - this is the main parte of the funtinon.
+
+.No return type - you dont need to mention the return type in 
+lambda's expresssion . the java 8+ compiler is able to infer the
+ return type by checking the code.
+
+lambda experssion
+
+() -> {}
+lamdainputparmeters() -> arrow(denoting lambda) {}lamdabody
+
+lamdausage:
+------
+lambda is mainly used ro implements functional interfaces . any
+interfces with a sam .
+
+java function interfaces:
+-------------
+
+consumer  ->DoubleConsumer ,int ,long BicONSUMER
+suplier ->int.Double,Long
+function ->Bifunction ,unary,BinaryOperatior
+predicate ->intPredicate,Double,Long,bipredicate
+
+
+
+
+
