@@ -1,0 +1,397 @@
+linux commands
+________________
+search commands.serca
+---------------
+1.find:this command used regular based it goes each and every directory it get the results.
+2.which:with in the our cuurrent directory , two or more binary files or same . it is excute which path the files .it explicity the file excute the comand.
+3.whereis:to searach the file based on path and onther directory.it is excutble or binary files.
+it not search only search path variable it is not going any others files
+4locate:locata is fastes search command it's work on the inode ,inode is not upadate directtly .
+it is not given the just now save the filis.after db upadted it 
+
+
+uname :
+------
+Usage: uname [OPTION]...
+Print certain system information.  With no OPTION, same as -s.
+
+  -a, --all                print all information, in the following order,
+                             except omit -p and -i if unknown:
+  -s, --kernel-name        print the kernel name
+  -n, --nodename           print the network node hostname
+  -r, --kernel-release     print the kernel release
+  -v, --kernel-version     print the kernel version
+  -m, --machine            print the machine hardware name
+  -p, --processor          print the processor type or "unknown"
+  -i, --hardware-platform  print the hardware platform or "unknown"
+  -o, --operating-system   print the operating system
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+For complete documentation, run: info coreutils 'uname invocation'
+
+
+who:
+----
+$ who
+al22077  pts/0        2023-03-03 07:46 (192.168.5.254)
+pk22105  pts/1        2023-03-05 22:59 (192.168.2.175)
+sr22094  pts/2        2023-03-06 00:36 (192.168.4.211)
+sg21129  pts/3        2023-03-06 00:16 (192.168.7.62)
+rs22069  pts/4        2023-03-06 00:17 (192.168.7.233)
+sc22053  pts/5        2023-03-06 00:19 (192.168.7.118)
+dd21422  pts/6        2023-03-06 00:28 (192.168.7.134)
+rb21170  pts/7        2023-03-06 00:29 (192.168.5.106)
+aj22002  pts/8        2023-03-06 00:29 (192.168.3.49)
+rb22003  pts/9        2023-03-06 00:29 (192.168.5.59)
+ms21420  pts/10       2023-03-06 00:30 (192.168.2.138)
+mm22042  pts/11       2023-03-06 00:30 (192.168.2.221)
+si22273  pts/12       2023-03-06 00:34 (192.168.2.120)
+vk22243  pts/13       2023-03-06 00:31 (192.168.3.172)
+as21053  pts/14       2023-03-06 00:31 (192.168.2.41)
+ke21416  pts/15       2023-03-06 01:53 (192.168.2.101)
+sm22227  pts/16       2023-03-06 02:05 (192.168.3.48)
+am21418  pts/17       2023-03-06 00:38 (192.168.2.205)
+su22034  pts/18       2023-03-06 00:40 (192.168.6.170)
+sb22182  pts/19       2023-03-06 00:41 (192.168.5.27)
+rp21378  pts/20       2023-03-06 00:42 (192.168.6.62)
+kt22054  pts/21       2023-03-06 00:53 (192.168.3.26)
+hb21394  pts/22       2023-03-06 01:07 (192.168.5.185)
+sc21435  pts/23       2023-03-06 01:10 (192.168.6.165)
+em22081  pts/24       2023-03-06 02:07 (192.168.5.156)
+
+who am i:it dispay who are loginded the system name will be display,check frist who am i commond and the after work that 
+---------
+su22034  pts/18       2023-03-06 00:40 (192.168.6.170)
+
+Mv:
+--
+rename and cut paste command using 
+
+inode is fullynames is avilble.
+
+
+
+history:
+---------
+
+ 1  ls
+    2  ls/bin
+    3  ls -l
+    4  ls -al
+    5  mkdir sample
+    6  ls
+    7  cd sample
+    8  mk dir car
+    9  mkdir car
+   10  cd ../car
+   11  cd car
+   12  cd ../car
+   13  cd ../sample
+   14  cd sample
+   15  cd ../sample
+   16  pwd
+   17  cd ../
+   18  mkdir fruits vechils
+   19  mkdir -p fruits/apple
+   20  ls
+   21  ls -al
+   22  man mkdir
+   23  ls -l
+   24  cd fruits
+   25  cd ../
+   26  rmdir sample
+   27  rmdir vechils
+   28  ls-l
+   29  ls -l
+   30  touch mango
+   31  touch banna
+   32  touch pinaapple
+   33  mkdir fruits1
+   34  mv mango banna pinaapple fruirs1
+   35  mv mango banna pinaapple fruits
+   36  ls -al
+   37  ls -l
+   38  ls -al
+   39  pwd
+   40  cp banna apple
+   41  touch test
+   42  cp apple pinaapple
+   43  ls fruits
+   44  cp -r fruits sample
+   45  ls sample
+   46  ls -fruits
+   47  ls -l
+   48  ls fruits
+   49  ls sample
+   50  ls car
+   51  touch pen
+   52  touch book pen1 pen2
+   53  mkdir sta
+   54  mv book pen1 pen2 pen sta
+   55  ls sta
+   56  ls
+   57  mv book fruits
+   58  cd sta
+   59  ls
+   60  mv book fruits
+   61  cd fruits
+   62  ls
+   63  cd fruits
+   64  ls
+   65  cd../
+   66  cd ../
+   67  cd fruits
+   68  ls
+   69  ls -l
+   70  cp -r sta test
+   71  cp -r sta sample
+   72  ls sta
+   73  ls sample
+   74  touch class.txt
+   75  ln class.txt class1.txt
+   76  cat class1.txt
+   77  cat class1.txt   hhdfhi
+   78  cat class1.x
+   79  ln recipes.txt newrecipes.txt
+   80  touch recipes.txt
+   81  ln recipes.txt newrecipes.txt
+   82  cat newrecipes
+   83  touch newrecipes.txt
+   84  ln recipes.txt newrecipes.txt
+   85  ln recipes.txt newrecipes1.txt
+   86  cat newrecipes1.txt
+   87  touch yes.txt
+   88  ls -all newyes.txt
+   89  touch newyes.txt
+   90  ls -al newyes.txt
+   91  ln yes.txt newyes.txt
+   92  cat newyes.txt
+   93  cat
+   94  ls
+   95  mkdir siva
+   96  ls
+   97  ls fruits
+   98  cp banna mango siva
+   99  cd fruits
+  100  cp banna mango siva
+  101  cd ..
+  102  mkdir vigitables
+  103  touch carrot zerkin tamato red
+  104  mv touch carrot zerkin tamato red vigitables
+  105  mv  carrot zerkin tamato red vigitables
+  106  ls -al
+  107  touch ss.java ss.html
+  108  mv ss.java ss.html vigitables
+  109  ls vigitables
+  110  mkdir copy
+  111  cp ss.html ss.java copy
+  112  ls copy
+  113  cp ss.html ss.java
+  114  cp ss.java copy
+  115  cat dog.txt
+  116  touch dog.txt
+  117  cat dog.txt
+  118  cat
+  119  sort dog.txt
+  120  sort dog.txt | uniq
+  121  ~cat dog.txt
+  122  cat dog.txt
+  123  ls sample
+  124  ls -al
+  125  ls
+  126  mkdir practice
+  127  cd practice
+  128  touch sample
+  129  cat >sample
+  130  sort sample
+  131  wc sample
+  132  tail sample
+  133  touch sample1
+  134  cat >sample
+  135  cat sample sample1
+  136  cat >sample1
+  137  cat sample sample1
+  138  cat sample sample1 >> file3
+  139  cat file3
+  140  cat sample sample1 > file3
+  141  cat file3
+  142  cat sample sample1 > file4
+  143  cat file4
+  144  cat -n file4
+  145  cat -b file4
+  146  cat >file4
+  147  cat file4
+  148  cat -n file4
+  149  cat -b file4
+  150  cat -s file4
+  151  cat -n file4
+  152  cat -s file4
+  153  less file4
+  154  man tail
+  155  cat >file2
+  156  cat file1
+  157  cat file2
+  158  cat -n file2
+  159  cat > file3
+  160  cat -n file3
+  161  tail file3
+  162  tail -n +4 file3
+  163  cat > siva.txt
+  164  wc siva.txt
+  165  ls -al | wc
+  166  ls
+  167  ls | sort
+  168  man sort
+  169  man mv
+  170  cat dog.txt
+  171  cat >dogs.txt
+  172  sort dogs.txt
+  173  sort -u dogs.txt
+  174  sort -d dogs.txt
+  175  sort -f dogs.txt
+  176  uniq dogs.txt
+  177  sort dogs.txt | uniq
+  178  sort dogs.txt | uniq -d
+  179  sort dogs.txt | uniq -c
+  180  cat > fruits4.txt
+  181  cat > morefruits5.txt
+  182  diff fruits4.txt morefruits5.txt
+  183  morefruits5.txt
+  184  diff -y  fruits4.txt morefruits5.txt
+  185  diff -u  fruits4.txt morefruits5.txt
+  186  cat fruits4.txt
+  187  printf "pina\nredornge\n">> fruits4.txt
+  188  cat fruits4.txt
+  189  echo "blue apple" >> fruits4.txt
+  190  cat fruits4.txt
+  191  echo"The path variable is $PATH"
+  192  echo *
+  193  echo f*
+  194  echo ~
+  195  echo {1..10}
+  196  echo {a ..z}
+  197  echo {a..z}
+  198  echo {A..z}
+  199  du
+  200  du *
+  201  grep "m" .txt
+  202  cat fruits4.txt
+  203  grep "b" fruits4.txt
+  204  history
+  205  history | grep docker
+  206  ping google.com
+  207  traceroute google.com
+  208  passwd
+  209  passwd <username> <new password>
+  210  who
+  211  who -aH
+  212  who am i
+  213  who -aH am i
+  214  su su22034
+  215  nano file2
+  216  emacs file3
+  217  vi file3
+  218  cat file3
+  219  which
+  220  which file3
+  221  which ls
+  222  jobs
+  223  top &
+  224  top
+  225  top -o mem
+  226  ps
+  227  ps ax
+  228  uname–a
+  229  uname
+  230  uname _a
+  231  uname --help
+  232  uname -p
+  233  uname -cut
+  234  uname -a
+  235  who
+  236  tty
+  237  pty
+  238  wa
+  239  wall
+  240  who am i
+  241  ls -l
+  242  ls -la
+  243  history
+
+date:
+-----
+thire is no cmd for the time in unix.
+
+date +%d-%m-%y : it will display the date and month and year here it will display last two numbers for year.
+06-03-23
+ date +%D
+03/06/23
+
+cal:
+----
+cal it showing cuurent month calender
+
+cal -y 2023 :it showing enter yers of the month
+
+tail file : Display the last  10 few lines in a given file.
+head file : Display the first 10 few lines in a given file.
+
+less:
+----
+        SUMMARY OF LESS COMMANDS
+
+      Commands marked with * may be preceded by a number, N.
+      Notes in parentheses indicate the behavior if N is given.
+      A key preceded by a caret indicates the Ctrl key; thus ^K is ctrl-K.
+
+  h  H                 Display this help.
+  q  :q  Q  :Q  ZZ     Exit.
+ ---------------------------------------------------------------------------
+
+                           MOVING
+
+  e  ^E  j  ^N  CR  *  Forward  one line   (or N lines).
+  y  ^Y  k  ^K  ^P  *  Backward one line   (or N lines).
+  f  ^F  ^V  SPACE  *  Forward  one window (or N lines).
+  b  ^B  ESC-v      *  Backward one window (or N lines).
+  z                 *  Forward  one window (and set window to N).
+  w                 *  Backward one window (and set window to N).
+  ESC-SPACE         *  Forward  one window, but don't stop at end-of-file.
+  d  ^D             *  Forward  one half-window (and set half-window to N).
+  u  ^U             *  Backward one half-window (and set half-window to N).
+  ESC-)  RightArrow *  Left  one half screen width (or N positions).
+
+more:
+----
+
+tar:
+----
+GNU `tar' saves many files together into a single tape or disk archive, and can
+restore individual files from the archive.
+
+Examples:
+  tar -cf archive.tar foo bar  # Create archive.tar from files foo and bar.
+  tar -tvf archive.tar         # List all files in archive.tar verbosely.
+  tar -xf archive.tar          # Extract all files from archive.tar.
+
+passwd
+------
+it change the password
+-----
+wc –c : It will display the no.of characters in a given file. wc –w : It will display the no .of words in a given file.
+
+ df -h class.txt
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/centos-home  873G  3.9G  869G   1% /home
+
+ free
+              total        used        free      shared  buff/cache   available
+Mem:        7828444     4069096      285024      435120     3474324     3018432
+Swap:       7995388       52704     7942684
+
+cut –c1 file1.txt : It will print the first character in a given text file.
+ cut –c1-2 file1.txt : It will print the first two characters in a given text file.
+ cut -c4-6 file2.txt : It will print the between range charcters.
+ cut -d " " -f1 file2.txt : It will print the particular column.

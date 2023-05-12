@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<class>
+<student>
+<id>100</id>
+<name>sivasankarreddy</name>
+<course>fullstackjavadeveloper</course>
+</student>
+<student>
+<id>101</id>
+<name>sivareddy</name>
+<course>fullstackjavadeveloper</course>
+</student>
+<student>
+<id>100</id>
+<name>sankarreddy</name>
+<course>fullstackjavadeveloper</course>
+</student>
+
+</class>
