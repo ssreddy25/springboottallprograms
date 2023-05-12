@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<bean id="javaCollection" class="springcollectioninjection.javaCollection">
+
+		<property name="addressList">
+			<list>
+				<value>hydrabad</value>
+				<value>karminagar</value>
+				<value>nijamabad</value>
+				<value>sidepeta</value>
+				<value>usa</value>
+				<value>usa</value>
+			</list>
+		</property>
+
+		<property name="addressSet">
+			<set>
+				<value>hydrabad</value>
+				<value>karminagar</value>
+				<value>nijamabad</value>
+				<value>sidepeta</value>
+				<value>usa</value>
+				<value>usa</value>
+			</set>
+		</property>
+
+		<property name="addressMap">
+			<map>
+				<entry key="1" value="hydrabad" />
+				<entry key="2" value="rajampeta" />
+				<entry key="3" value="srivanli" />
+				<entry key="4" value="ramakaa" />
+			</map>
+		</property>
+
+		<property name="addressprop">
+			<props>
+				<prop key="5">usa</prop>
+				<prop key="2">uk</prop>
+				<prop key="5">india</prop>
+				<prop key="4">pakistan</prop>
+			</props>
+
+		</property>
+
+
+	</bean>
+</beans>
