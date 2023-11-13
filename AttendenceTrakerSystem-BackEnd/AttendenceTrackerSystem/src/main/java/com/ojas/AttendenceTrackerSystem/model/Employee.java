@@ -36,6 +36,9 @@ public class Employee {
 	
 	private String empAddress;
 	private String type;
+
+	
+	
 	
 //	@OneToMany(mappedBy = "employee" ,cascade = CascadeType.ALL)
 //	private List<Project> projects;
